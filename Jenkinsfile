@@ -13,10 +13,11 @@ pipeline
     {
         stage('Cloning Git')
         {
-            steps
-            {
-                checkout scm
-            }
+              steps {
+                sshagent(['github-token']) {
+                    checkout scm
+                }
+            
         }
 
         stage('SAST')
