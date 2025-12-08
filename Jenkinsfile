@@ -103,19 +103,20 @@ pipeline {
         stage('Cloning Git') {
             steps {
                 // Use SSH credentials and specify Git tool
-                sshagent(['github-token']) {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: '*/main']],
-                        doGenerateSubmoduleConfigurations: false,
-                        extensions: [],
-                        userRemoteConfigs: [[
-                            url: 'git@github.com:cplson/final_test_app.git',
-                            credentialsId: 'github-token'
-                        ]],
-                        gitTool: 'Default'  // must match name in Global Tool Configuration
-                    ])
-                }
+              sshagent(['github-token']) {
+                  checkout([
+                      $class: 'GitSCM',
+                      branches: [[name: '*/main']],
+                      doGenerateSubmoduleConfigurations: false,
+                      extensions: [],
+                      userRemoteConfigs: [[
+                          url: 'git@github.com:cplson/NodejsChatApp.git',
+                          credentialsId: 'github-token'
+                      ]],
+                      gitTool: 'Default'
+                  ])
+              }
+
             }
         }
 
