@@ -16,9 +16,9 @@ pipeline
               steps {
                 sshagent(['github-token']) {
                     checkout scm
-                }
-            
+                }           
         }
+     }
 
         stage('SAST')
         {
