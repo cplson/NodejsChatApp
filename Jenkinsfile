@@ -104,17 +104,17 @@ pipeline {
             steps {
                 // Use SSH credentials and specify Git tool
               sshagent(['github-token']) {
-                  checkout([
-                      $class: 'GitSCM',
-                      branches: [[name: '*/main']],
-                      doGenerateSubmoduleConfigurations: false,
-                      extensions: [],
-                      userRemoteConfigs: [[
-                          url: 'git@github.com:cplson/NodejsChatApp.git',
-                          credentialsId: 'github-token'
-                      ]],
-                      gitTool: 'Default'
-                  ])
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        url: 'git@github.com:cplson/NodejsChatApp.git',
+                        credentialsId: 'github-token'
+                    ]],
+                    gitTool: 'Default'
+                ])
               }
 
             }
