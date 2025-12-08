@@ -11,14 +11,12 @@ pipeline
 
     stages 
     {
-        stage('Cloning Git')
-        {
-              steps {
-                sshagent(['github-token']) {
-                    checkout scm
-                }           
-        }
-     }
+          stage('Cloning Git')
+          {
+              
+          steps { checkout scm }   
+          
+          }
 
         stage('SAST')
         {
