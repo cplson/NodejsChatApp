@@ -14,10 +14,14 @@ pipeline
     {
           stage('Cloning Git')
           {
-              
-               sshagent([${GIT_CREDENTIALS}]) {
-               checkout scm
+               steps
+               {
+                    sshagent([${GIT_CREDENTIALS}]) 
+                         {
+                         checkout scm
+                         }
                }
+
   
           
           }
