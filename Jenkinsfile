@@ -5,6 +5,7 @@ pipeline
      environment
      {
         // Docker Hub credentials ID stored in Jenkins
+          GIT_CREDENTIALS = 'git-token'
         DOCKERHUB_CREDENTIALS = 'cweb_2140'
         IMAGE_NAME = 'jacjamg/homework_02:latest'
      }
@@ -14,7 +15,10 @@ pipeline
           stage('Cloning Git')
           {
               
-          steps { checkout scm }   
+               sshagent([${GIT_CREDENTIALS}]) {
+               checkout scm
+               }
+  
           
           }
 
