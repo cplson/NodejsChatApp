@@ -10,7 +10,8 @@ pipeline
      }
 
     
-
+     stages
+     {
 
 
         stage('BUILD-AND-TAG')
@@ -73,3 +74,4 @@ pipeline
             }
         }
     }
+}
