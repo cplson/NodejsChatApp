@@ -11,18 +11,26 @@ pipeline
         IMAGE_NAME = 'jacjamg/homework_02:latest'
      }
 
-    stages 
-    {
-          stage('Cloning Git')
-          {
-               steps
-               {
-                    sshagent(['${GIT_CREDENTIALS}']) 
-                         {
-                         checkout scm
-                         }
-               }
-          }
+    
+    stages {
+        stage('Cloning Git') {
+            steps {
+                checkout scm
+            }
+        }
+
+    // stages 
+    // {
+    //       stage('Cloning Git')
+    //       {
+    //            steps
+    //            {
+    //                 sshagent(['${GIT_CREDENTIALS}']) 
+    //                      {
+    //                      checkout scm
+    //                      }
+    //            }
+    //       }
 
         // stage('SAST')
         // {
