@@ -10,33 +10,6 @@ pipeline
      }
 
     
-    stages {
-        stage('Cloning Git') {
-            steps {
-                checkout scm
-            }
-        }
-          
-         stage('SAST')
-        {
-            steps
-            {
-                sh 'echo Running SAST scan...'
-            }
-        }
-
-    stages 
-    {
-          stage('Cloning Git')
-          {
-               steps
-               {
-                    sshagent(['${GIT_CREDENTIALS}']) 
-                         {
-                         checkout scm
-                         }
-               }
-          }
 
 
 
