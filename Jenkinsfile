@@ -22,10 +22,7 @@ pipeline
                          checkout scm
                          }
                }
-
-  
-          
-        //   }
+          }
 
         // stage('SAST')
         // {
