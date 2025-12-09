@@ -16,7 +16,7 @@ pipeline
           {
                steps
                {
-                    sshagent([${GIT_CREDENTIALS}]) 
+                    sshagent(['${GIT_CREDENTIALS}']) 
                          {
                          checkout scm
                          }
