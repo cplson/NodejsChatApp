@@ -18,6 +18,14 @@ pipeline
                 checkout scm
             }
         }
+          
+         stage('SAST')
+        {
+            steps
+            {
+                sh 'echo Running SAST scan...'
+            }
+        }
 
     // stages 
     // {
